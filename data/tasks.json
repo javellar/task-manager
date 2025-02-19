@@ -2,26 +2,37 @@
     {
         "id": 1,
         "description": "take a bath",
-        "completed": false
+        "completed": false,
+        "priority": "none"
     },
     {
         "id": 2,
         "description": "go fishing",
-        "completed": false
+        "completed": false,
+        "priority": "none"
     },
     {
         "id": 3,
         "description": "Task A",
-        "completed": false
+        "completed": false,
+        "priority": "none"
     },
     {
         "id": 4,
         "description": "Task B",
-        "completed": false
+        "completed": false,
+        "priority": "none"
     },
     {
         "id": 5,
         "description": "Task C",
+        "completed": false,
+        "priority": "none"
+    },
+    {
+        "id": 6,
+        "description": "Finish project",
+        "priority": "high",
         "completed": false
     }
 ]

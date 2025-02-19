@@ -7,7 +7,8 @@ def main():
 
         if command == "add":
             description = input("Enter task description: ").strip()
-            add_task(description)
+            priority = input("Enter priority (high/medium/low/none): ").strip().lower()
+            add_task(description, priority)
 
         elif command == "list":
             tasks = load_tasks()
@@ -17,7 +18,13 @@ def main():
                 print("\nTasks:")
                 for task in tasks:
                     status = "✅" if task["completed"] else "❌"
-                    print(f"{task['id']}. {status} {task['description']}")
+                    priority_color = {
+                        "high": "🔴",
+                        "medium": "🟠",
+                        "low": "🟢",
+                        "none": "⚪"
+                    }
+                    print(f"{task['id']}. {status} {task['description']} {priority_color[task['priority']]} ({task['priority']})")
 
         elif command == "complete":
             try:
@@ -42,3 +49,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
