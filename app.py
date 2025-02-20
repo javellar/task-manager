@@ -15,8 +15,11 @@ def main():
             if not tasks:
                 print("No tasks found.")
             else:
-                print("\nTasks:")
-                for task in tasks:
+                print("\n📋 Task List")
+                print("-" * 50)  # Divider line
+                print(f"{'ID':<5} {'Description':<30} {'Priority'}")  # Header row
+                print("-" * 50)  # Divider line
+                for task in tasks:  # Ensure all tasks are printed
                     status = "✅" if task["completed"] else "❌"
                     priority_color = {
                         "high": "🔴",
@@ -24,7 +27,8 @@ def main():
                         "low": "🟢",
                         "none": "⚪"
                     }
-                    print(f"{task['id']}. {status} {task['description']} {priority_color[task['priority']]} ({task['priority']})")
+                    print(f"{task['id']:<5} {status} {task['description']:<30} {priority_color[task['priority']]} ({task['priority']})")
+                print("-" * 50)  # Footer divider
 
         elif command == "complete":
             try:
