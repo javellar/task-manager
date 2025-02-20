@@ -1,9 +1,9 @@
-from tasks import load_tasks, add_task, complete_task, delete_task
+from tasks import load_tasks, add_task, complete_task, delete_task, edit_task
 
 def main():
     print("Welcome to Task Manager! 📝")
     while True:
-        command = input("\nEnter command (add/list/complete/delete/exit): ").strip().lower()
+        command = input("\nEnter command (add/list/complete/delete/edit/exit): ").strip().lower()
 
         if command == "add":
             description = input("Enter task description: ").strip()
@@ -40,6 +40,19 @@ def main():
             except ValueError:
                 print("⚠️ Invalid input. Please enter a number.")
 
+        elif command == "edit":
+            try:
+                task_id = int(input("Enter task ID to edit: "))
+                new_description = input("Enter new description (leave blank to keep current): ").strip()
+                new_priority = input("Enter new priority (high/medium/low/none, leave blank to keep current): ").strip().lower()
+
+                new_description = new_description if new_description else None
+                new_priority = new_priority if new_priority else None
+
+                edit_task(task_id, new_description, new_priority)
+            except ValueError:
+                print("⚠️ Invalid input. Please enter a number.")
+
         elif command == "exit":
             print("Goodbye! 👋")
             break
@@ -49,4 +62,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

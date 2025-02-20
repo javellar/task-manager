@@ -12,6 +12,12 @@
         "completed": false
     },
     {
+        "id": 10,
+        "description": "Read \"Atomic Habbits\"",
+        "priority": "high",
+        "completed": false
+    },
+    {
         "id": 8,
         "description": "Water plants",
         "priority": "medium",

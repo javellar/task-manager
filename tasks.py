@@ -30,8 +30,6 @@ def load_tasks():
             save_tasks([])
             return []
 
-
-
 def save_tasks(tasks):
     """Save tasks to the JSON file."""
     with open(TASKS_FILE, "w") as file:
@@ -88,3 +86,25 @@ def delete_task(task_id):
     save_tasks(updated_tasks)
     print(f"🗑️ Task {task_id} deleted, and task IDs updated.")
 
+def edit_task(task_id, new_description=None, new_priority=None):
+    """Edit a task's description and/or priority."""
+    tasks = load_tasks()
+
+    # Validate task ID
+    for task in tasks:
+        if task["id"] == task_id:
+            if new_description:
+                task["description"] = new_description
+            if new_priority:
+                valid_priorities = ["high", "medium", "low", "none"]
+                if new_priority in valid_priorities:
+                    task["priority"] = new_priority
+                else:
+                    print("⚠️ Invalid priority. Choose from: high, medium, low, none.")
+                    return
+            
+            save_tasks(tasks)
+            print(f"✅ Task {task_id} updated.")
+            return
+
+    print(f"⚠️ Task {task_id} not found.")
