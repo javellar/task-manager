@@ -1,7 +1,7 @@
 # 📝 Task Manager
 
 ## **📌 Project Overview**
-This is a **command-line-based Task Manager** that allows users to efficiently **add, complete, delete, edit, and list tasks** while keeping track of priorities and due dates. It was built as part of a structured learning journey to **understand core software engineering principles**.
+This is a **command-line-based Task Manager** that allows users to efficiently **add, complete, delete, edit, and list tasks** while keeping track of priorities and due dates. It was built with the assistance of AI as part of a structured learning journey to **understand core software engineering principles**.
 
 ---
 
