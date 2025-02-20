@@ -1,44 +1,49 @@
-✅ Features Implemented
+# 📝 Task Manager
 
-1️⃣ Core Task Management
-✔ Add tasks with a description and priority
-✔ Mark tasks as complete
-✔ Delete tasks
+## **📌 Project Overview**
+This is a **command-line-based Task Manager** that allows users to efficiently **add, complete, delete, edit, and list tasks** while keeping track of priorities and due dates. It was **built using AI** as part of a structured learning journey to understand core software engineering principles.
 
-2️⃣ Enhancements & Improvements
-✔ Sorting tasks by priority (High → Medium → Low → None)
-✔ Editing tasks (Modify description and priority)
-✔ Filtering completed vs. pending tasks
-✔ Adding due dates and ensuring correct input format
-✔ Ensuring all tasks display in a clean table format
+---
 
-3️⃣ UI/Formatting Improvements
-✔ Added a structured header row (ID | Description | Priority | Due Date)
-✔ Ensured column spacing is consistent
-✔ Prevented shifting issues due to text length
-✔ Kept the "Due Date" column aligned correctly
+## **🛠 Features**
+✔ Add, complete, delete, and edit tasks  
+✔ Sort tasks by priority (High → Medium → Low → None)  
+✔ Filter tasks (view pending or completed tasks)  
+✔ Assign **due dates** to tasks  
+✔ Store data in a **JSON file** for persistence  
+✔ Display a **well-formatted task list** with proper column alignment  
 
-🔹 Key Software Engineering Concepts Learned
+---
 
-This project was more than just writing code—it was an introduction to software engineering fundamentals. Here's what we picked up:
+## **🎯 How This Project Was Built**
+This project was developed through an **interactive learning process**, focusing on **progressive software engineering concepts**.  
 
-1️⃣ Version Control & Git Best Practices
-✔ Using git status to check for changes
-✔ Using git add . vs. git add filename
-✔ Understanding git commit and when to commit
-✔ Pushing code to GitHub (git push origin main)
+I started by building a **basic task management system** with simple CLI commands and progressively added features while learning key principles like:
+- **Software design & modular functions** (keeping code organized)
+- **Version control with Git & GitHub** (incremental commits for each feature)
+- **Data handling with JSON** (storing and retrieving structured data)
+- **Debugging & problem-solving** (fixing UI misalignments, logic errors)
+- **User experience improvements** (better CLI interactions, formatted output)
 
-2️⃣ Code Structure & Readability
-✔ Keeping functions modular (e.g., load_tasks(), edit_task(), list_tasks())
-✔ Using constants for structured data (priority colors)
-✔ Ensuring clean, readable output for the user
+Each step in this project was structured to **apply real-world development practices**, ensuring that every improvement was made incrementally, with clear version control and feature validation.
 
-3️⃣ Debugging & Fixing Issues
-✔ Understanding error messages (KeyError, JSONDecodeError)
-✔ Ensuring input validation (due_date format handling)
-✔ Fixing UI alignment issues by adjusting column spacing
+---
 
-4️⃣ Data Handling & Persistence
-✔ Reading & writing JSON files (tasks.json)
-✔ Ensuring data remains structured and consistent
-✔ Implementing sorting logic on data retrieval
+## **🛠 Technologies Used**
+- **Python 3** (Core scripting)
+- **JSON** (Data storage)
+- **Git & GitHub** (Version control)
+- **VS Code** (Development environment)
+
+---
+
+## **🚀 Next Steps**
+This project laid the foundation for **understanding software engineering principles**. The next step is transitioning to a **REST API project** where similar concepts will be applied to **backend API development**.
+
+---
+
+## **📂 Project Setup**
+### **🔹 How to Run the Task Manager**
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/task-manager.git
