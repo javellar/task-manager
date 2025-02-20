@@ -4,7 +4,7 @@ import os
 TASKS_FILE = "data/tasks.json"
 
 def load_tasks():
-    """Load tasks from JSON, ensure all tasks have a priority, and sort by priority."""
+    """Load tasks from JSON, ensure priorities exist, and sort by priority."""
     if not os.path.exists(TASKS_FILE):
         save_tasks([])
         return []
@@ -18,17 +18,18 @@ def load_tasks():
                 if "priority" not in task:
                     task["priority"] = "none"  # Assign default priority
 
-            # Ensure IDs remain sequential
-            for index, task in enumerate(tasks, start=1):
-                task["id"] = index
+            # Sorting order: High -> Medium -> Low -> None
+            priority_order = {"high": 1, "medium": 2, "low": 3, "none": 4}
+            tasks.sort(key=lambda task: priority_order.get(task["priority"], 4))
 
-            save_tasks(tasks)  # Save updated data
+            save_tasks(tasks)  # Save sorted & fixed data
             return tasks
 
         except json.JSONDecodeError:
             print("⚠️ Corrupt JSON detected. Resetting file.")
             save_tasks([])
             return []
+
 
 
 def save_tasks(tasks):

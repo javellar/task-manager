@@ -1,5 +1,29 @@
 [
     {
+        "id": 6,
+        "description": "Finish project",
+        "priority": "high",
+        "completed": false
+    },
+    {
+        "id": 7,
+        "description": "Submit report",
+        "priority": "high",
+        "completed": false
+    },
+    {
+        "id": 8,
+        "description": "Water plants",
+        "priority": "medium",
+        "completed": false
+    },
+    {
+        "id": 9,
+        "description": "Buy groceries",
+        "priority": "low",
+        "completed": false
+    },
+    {
         "id": 1,
         "description": "take a bath",
         "completed": false,
@@ -28,11 +52,5 @@
         "description": "Task C",
         "completed": false,
         "priority": "none"
-    },
-    {
-        "id": 6,
-        "description": "Finish project",
-        "priority": "high",
-        "completed": false
     }
 ]
