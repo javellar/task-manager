@@ -8,7 +8,11 @@ def main():
         if command == "add":
             description = input("Enter task description: ").strip()
             priority = input("Enter priority (high/medium/low/none): ").strip().lower()
-            add_task(description, priority)
+            
+            due_date = input("Enter due date (YYYY-MM-DD, leave blank if none): ").strip()
+            due_date = due_date if due_date else None  # Ensure None is passed if blank
+
+            add_task(description, priority, due_date)
 
         elif command == "list":
             tasks = load_tasks()
@@ -19,9 +23,9 @@ def main():
                 filtered_tasks = tasks if show_completed == "yes" else [task for task in tasks if not task["completed"]]
 
                 print("\n📋 Task List")
-                print("-" * 50)  # Divider line
-                print(f"{'ID':<5} {'Description':<30} {'Priority'}")  # Header row
-                print("-" * 50)  # Divider line
+                print("-" * 75)  # Table width remains 75
+                print(f"{'ID':<5} {'Description':<30} {'Priority':<20} {'Due Date':<15}")  # Priority gets fixed width
+                print("-" * 75)  # Divider line
                 for task in filtered_tasks:
                     status = "✅" if task["completed"] else "❌"
                     priority_color = {
@@ -30,8 +34,14 @@ def main():
                         "low": "🟢",
                         "none": "⚪"
                     }
-                    print(f"{task['id']:<5} {status} {task['description']:<30} {priority_color[task['priority']]} ({task['priority']})")
-                print("-" * 50)  # Footer divider
+                    due_date = task.get("due_date", "None")  # Default to "None" if missing
+                    
+                    priority_text = f"{priority_color[task['priority']]} ({task['priority']})"  # Ensuring uniform priority format
+                    
+                    print(f"{task['id']:<5} {status} {task['description']:<30} {priority_text:<20} {due_date:<15}")
+                print("-" * 75)  # Footer divider
+
+
 
         elif command == "complete":
             try:

@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 
 TASKS_FILE = "data/tasks.json"
 
@@ -108,3 +109,31 @@ def edit_task(task_id, new_description=None, new_priority=None):
             return
 
     print(f"⚠️ Task {task_id} not found.")
+
+def add_task(description, priority="none", due_date=None):
+    """Add a new task with a priority and optional due date."""
+    valid_priorities = ["high", "medium", "low", "none"]
+    
+    if priority not in valid_priorities:
+        print("⚠️ Invalid priority. Choose from: high, medium, low, none.")
+        return
+
+    # Validate due date format (YYYY-MM-DD)
+    if due_date:
+        try:
+            datetime.strptime(due_date, "%Y-%m-%d")
+        except ValueError:
+            print("⚠️ Invalid date format. Use YYYY-MM-DD.")
+            return
+
+    tasks = load_tasks()
+    new_task = {
+        "id": len(tasks) + 1,
+        "description": description,
+        "priority": priority,
+        "due_date": due_date if due_date else "None",
+        "completed": False
+    }
+    tasks.append(new_task)
+    save_tasks(tasks)
+    print(f"✅ Task added: {description} (Priority: {priority}, Due: {due_date if due_date else 'None'})")

@@ -24,9 +24,23 @@
         "completed": false
     },
     {
+        "id": 13,
+        "description": "Finish project",
+        "priority": "high",
+        "due_date": "None",
+        "completed": false
+    },
+    {
         "id": 8,
         "description": "Water plants",
         "priority": "medium",
+        "completed": false
+    },
+    {
+        "id": 15,
+        "description": "finish last project",
+        "priority": "medium",
+        "due_date": "None",
         "completed": false
     },
     {
@@ -39,6 +53,27 @@
         "id": 12,
         "description": "buy groceries again",
         "priority": "low",
+        "completed": false
+    },
+    {
+        "id": 14,
+        "description": "finish another project",
+        "priority": "low",
+        "due_date": "None",
+        "completed": false
+    },
+    {
+        "id": 16,
+        "description": "another task with a date",
+        "priority": "low",
+        "due_date": "None",
+        "completed": false
+    },
+    {
+        "id": 17,
+        "description": "another task with another date",
+        "priority": "low",
+        "due_date": "2025-03-10",
         "completed": false
     },
     {
