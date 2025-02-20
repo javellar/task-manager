@@ -18,6 +18,12 @@
         "completed": false
     },
     {
+        "id": 11,
+        "description": "Finish project",
+        "priority": "high",
+        "completed": false
+    },
+    {
         "id": 8,
         "description": "Water plants",
         "priority": "medium",
@@ -30,9 +36,15 @@
         "completed": false
     },
     {
+        "id": 12,
+        "description": "buy groceries again",
+        "priority": "low",
+        "completed": false
+    },
+    {
         "id": 1,
         "description": "take a bath",
-        "completed": false,
+        "completed": true,
         "priority": "none"
     },
     {

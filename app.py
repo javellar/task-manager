@@ -15,11 +15,14 @@ def main():
             if not tasks:
                 print("No tasks found.")
             else:
+                show_completed = input("Show completed tasks? (yes/no): ").strip().lower()
+                filtered_tasks = tasks if show_completed == "yes" else [task for task in tasks if not task["completed"]]
+
                 print("\n📋 Task List")
                 print("-" * 50)  # Divider line
                 print(f"{'ID':<5} {'Description':<30} {'Priority'}")  # Header row
                 print("-" * 50)  # Divider line
-                for task in tasks:  # Ensure all tasks are printed
+                for task in filtered_tasks:
                     status = "✅" if task["completed"] else "❌"
                     priority_color = {
                         "high": "🔴",
